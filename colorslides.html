@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fullscreen Light</title>
+
+	<style>
+		html {
+			cursor: default;
+		}
+
+		body {
+			background-color: #222;
+		}
+
+		.container {
+			position: absolute;
+ 			top: 50%;
+    		left: 50%;
+  			transform: translate(-50%, -50%);
+		}
+
+		.colorpicker, .gobutton {
+			display: block;
+		}
+
+		.colorpicker {
+			margin: 5px;
+			padding: 5px;
+			height: 20vw;
+			width: 25vw;
+		}
+
+		.gobutton {
+			margin: 5px;
+			width: 25vw;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<input type="color" class="colorpicker" value="#888888">
+		<button class="gobutton" onclick="go()">Go</button>
+	</div>
+
+	<script>
+		var html = document.getElementsByTagName("html")[0];
+		var body = document.getElementsByTagName("body")[0];
+		var colorpicker = document.getElementsByClassName("colorpicker")[0];
+		var gobutton = document.getElementsByClassName("gobutton")[0];
+
+		function go() {
+			colorpicker.style.display = "none";
+			gobutton.style.display = "none";
+
+			body.style.backgroundColor = colorpicker.value;
+
+			if (html.requestFullscreen) {
+    			html.requestFullscreen();
+  			} else if (html.webkitRequestFullscreen) {
+    			html.webkitRequestFullscreen();
+  			}
+
+  			html.style.cursor = "none";
+		}
+	</script>
+</body>
+</html>
