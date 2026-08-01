@@ -1,0 +1,31 @@
+html {
+    cursor: default;
+}
+
+body {
+    background-color: #222;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.colorpicker, .gobutton {
+    display: block;
+}
+
+.colorpicker {
+    margin: 5px;
+    padding: 5px;
+    height: 20vw;
+    width: 25vw;
+}
+
+.gobutton {
+    margin: 5px;
+    width: 25vw;
+    height: 30px;
+}
